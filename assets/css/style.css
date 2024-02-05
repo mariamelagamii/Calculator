@@ -1,0 +1,173 @@
+/* Start Variables */
+:root {
+    --screen:#0981F2;
+    --background:#012034;
+    --keypad-btns-color:#DBF54C;
+    --op-color:#23BC1F;
+    --math-color:#A085EC;
+}
+/* Global rules */
+* {
+    font-family: Verdana, sans-serif;
+    box-sizing: border-box;
+}
+body {
+    
+    background-color: var(--background);
+    min-height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* Styling */
+.container {
+    background-color: var(--background);
+    width: 375px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    user-select: none;
+}
+
+#Display-area {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: repeat(2, minmax(40px, auto));
+    word-wrap: break-word;
+    padding-bottom: 20px;
+    border: 4px solid var(--screen);
+    border-radius: 10px 10px 0 0 ;
+}
+#Display-area div {
+    border: 3px solid white;
+    margin: 10px;
+    padding: 5px 40px;
+}
+#Display-area .currentInput {
+    text-align: right;
+    height: 8vh;
+    color: white;
+    font-size: xx-large;
+}
+
+#Display-area .answerScreen {
+    text-align: right;
+    color: white;
+    height: 8vh;
+    font-size: xx-large;
+}
+
+.keypad-btns {
+    width: 100%;
+    padding: 5px 0;
+    display: grid;
+    height: 500px;
+    grid: repeat(5, 1fr) / repeat(4, 1fr);
+    grid-row-gap: 5px;
+    grid-column-gap: 5px;
+    border: 4px solid var(--keypad-btns-color);
+    border-radius: 0 0 10px 10px;
+}
+.keypad-btns .math {
+    border: 4px solid var(--math-color);
+    margin: 4px;
+    color: var(--math-color);
+}
+.keypad-btns .oper {
+    border: 4px solid var(--op-color);
+    margin: 4px;
+    color: var(--op-color);
+}
+.keypad-btns button {
+    outline: none;
+    border: none;
+    background-color: #012a46;
+    color: white;
+    font-size: xx-large;
+}
+.keypad-btns #clear {
+    grid-area: 1 / 1 / 2 / 2;
+}
+
+.keypad-btns #erase {
+    grid-area: 1 / 2 / 2 / 3;
+}
+
+.keypad-btns .division {
+    grid-area: 1 / 3 / 2 / 4;
+}
+
+.keypad-btns .multi {
+    grid-area: 1 / 4 / 2 / 5;
+}
+
+.keypad-btns .subtract {
+    grid-area: 2 / 4 / 3 / 5;
+}
+
+.keypad-btns .add {
+    grid-area: 3 / 4 / 4 / 5;
+}
+
+.keypad-btns #evaluate {
+    grid-area: 4 / 4 / 6 / 5;
+}
+
+.keypad-btns .num0 {
+    grid-area: 5 / 1 / 6 / 3;
+}
+
+.keypad-btns .num1 {
+    grid-area: 4 / 1 / 5 / 2;
+}
+
+.keypad-btns .num2 {
+    grid-area: 4 / 2 / 5 / 3;
+}
+
+.keypad-btns .num3 {
+    grid-area: 4 / 3 / 5 / 4;
+}
+
+.keypad-btns .num4 {
+    grid-area: 3 / 1 / 4 / 2;
+}
+
+.keypad-btns .num5 {
+    grid-area: 3 / 2 / 4 / 3;
+}
+
+.keypad-btns .num6 {
+    grid-area: 3 / 3 / 4 / 4;
+}
+
+.keypad-btns .num7 {
+    grid-area: 2 / 1 / 3 / 2;
+}
+
+.keypad-btns .num8 {
+    grid-area: 2 / 2 / 3 / 3;
+}
+
+.keypad-btns .num9 {
+    grid-area: 2 / 3 / 3 / 4;
+}
+
+.keypad-btns .dot {
+    grid-area: 5 / 3 / 6 / 4;
+}
+
+.num_btn:hover,
+.fun_btn:hover {
+    background-color: #013e66;
+}
+@media only screen and (max-width: 600px) {
+    body {
+        background-color: var(--background);
+        align-items: flex-start;
+    }
+}
